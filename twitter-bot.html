@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Color Bot</title>
+        <link rel="stylesheet" type="text/css" href=".\css\bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href=".\css\bootstrap-responsive.css"/>
+		<link rel="stylesheet" type="text/css" href=".\css\style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700" rel="stylesheet">
+	</head>
+	<body>
+        <!--Navbar-->
+        <div class="container-fluid">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="work.html"><img class="navbar-img" src="./img/personal-logo.png"></a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="work.html"><span>Work</span></a></li>
+                  <li><a href="about-me.html">About Me</a></li>
+                  <!--li><a href="fun.html">Fun</a></li-->
+                  <li><a href="resume.html">R&eacute;sum&eacute;</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="col-lg-12">
+                <section class="text-section">
+                    <h1 class="work-header">Building a Twitter Bot for Designers</h1>
+                    <p class="work-tasks"><a href="#research">Research</a>
+                        |
+                        <a href="#code-prototyping">Code Prototyping</a>
+                        |
+                        <a href="#implementation">Implementation & Usability Testing</a>
+                    </p>
+                    <img class="img-work-page img-responsive" src="./img/color-bot-cover.png" alt="Cover">
+                    <h2>The Goal:</h2>
+                    <p>I wanted to make a minimalist tool for generating color palettes. I wanted to ensure that it not fall into the trappings of other Twitter bots. Instead of just vomiting data out into the aether, I wanted users to interact with it.</p>
+                    
+                    <h2><a id="research"></a>Research:</h2>
+                    <p> One example that piqued my interest was <a href="https://twitter.com/colorschemez">Color Schemer</a>. Every hour, it tweets a color palette and assigns creative names to each color in the palette. In my opinion it's the perfect art-project bot. I wanted to make something more stripped down and usable, so my design priorities were different for my bot. It was important to me that the user could copy the color values and paste them into a color editor.</p>
+                     <figure>
+                        <img class="img-work-page-half img-responsive" src="./img/color-schemez-output.PNG" alt="Example">
+                        <figcaption>An example of Color Schemer's Output.</figcaption>
+                    </figure>
+                    
+                    <p> I wanted my users to be able to interact with the bot directly. They should be able to stay in Twitter and just tweet at it to recieve a new color palette. Ultimately, I decided that if they tweet a color at the bot, it should generate a palette that includes the color they tweeted. At its most basic, the inputs and outputs of the bot are as follows:</p>
+                     <figure>
+                        <img class="img-work-page img-responsive" src="./img/color-bot-input-output.png" alt="Example">
+                        <figcaption>Bot inputs and outputs.</figcaption>
+                    </figure>
+                    
+                    <h2><a id="code-prototyping"></a>Code Prototyping:</h2>
+                    <p>The core of the bot is its ability to generate color harmonies, so the first thing I did was work on coding a variety of those. All the examples I found worked by taking a default color and making alterations to the hue, saturation, and value to create new colors in the harmony. I was able to build my own color harmony algorithms in Python that took an HSV color and returned a list of HSV values that represented a harmony. Since I wanted my interface to be RGB, I wrote utility functions to convert between the two. I used the matplotlib graphing library to make the bands of color for the bot's images.
+                    </p> 
+                    <figure>
+                        <img class="img-work-page img-responsive" src="./img/color-bot-flow.png" alt="Example">
+                        <figcaption>Bot flow.</figcaption>
+                    </figure>
+                    
+                    <p>
+                    I tested my bot in the command line, generating many color palettes and tweaking the algorithms until they yielded attractive color harmonies. Many of the harmonies took the starting hue of the input color and manipulated it in interesting ways. Below are some examples of color harmonies that could be created for #41D3BD.
+                    </p>
+                    <figure>
+                        <img class="img-work-page img-responsive" src="./img/color-bot-harmonies.png" alt="Example">
+                        <figcaption>Color Harmonies</figcaption>
+                    </figure>
+                    
+                    <h2><a id="implementation"></a>Implementation & Usability Testing:</h2>
+                    <p>Building a bot around my small library of color harmony generators ended up being fairly easy. The only difficult part was making sure that many different kinds of user input could be parsed and responded to by the bot. I didn't want the user to input what they thought was a valid color code and then have it get rejected by the bot.</p>
+                        
+                    <p>I ran usability testing with a small group of my peers to see what kinds of color codes they might use with the bots. Some used six-digit RGB codes and some used abbreviated three-digit RGB codes. Some used a '#' in front of their numbers, some used '0x', which is a common notation in many programming languages, and some used nothing. Many used simple colors names like red.</p>
+                        
+                    <p>There were two cases that surprised me that I wouldn't have discovered without usability testing. First, people often didn't know which color they wanted to use as a starting point for the color generation. Second, users sometimes used a greyscale value that didn't produce interesting color harmonies because they had no hue value to manipulate. I was able to change how my bot handles these two cases to ensure that these types of users could still get interesting color harmonies. Without usability testing, I would never have discovered these issues on my own.
+                    </p>
+                    
+                    <p >You can generate your own color palettes by tweeting <a href="https://twitter.com/ColorPaletteBot">@ColorPaletteBot.</a> Please note that a bot cannot see your mentions if you have a private account.</p>  
+                </section>
+            </div>
+        </div>
+	</body>
+</html>
