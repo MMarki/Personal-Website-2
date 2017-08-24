@@ -297,13 +297,24 @@ a.image-link img {
   position: absolute;
   width: 760px;
   top: 30%;
-  left: 50%;
+  left: 45%;
   transform: translate(-50%, -50%);
+}
+@media (max-width: 900px) {
+  .loading {
+    width: 253.33333333333334px;
+    left: 43%;
+  }
 }
 .loadingFront {
   position: absolute;
   height: 200px;
   z-index: 2;
+}
+@media (max-width: 900px) {
+  .loadingFront {
+    height: 75px;
+  }
 }
 #myBar {
   width: 1%;
@@ -315,6 +326,11 @@ a.image-link img {
   -moz-transform: skewX(-15deg);
   transform: skewX(-15deg);
   left: 30px;
+}
+@media (max-width: 900px) {
+  #myBar {
+    height: 75px;
+  }
 }
 .front-styles {
   padding-top: 150px;
@@ -343,7 +359,7 @@ a.image-link img {
   padding-top: 80px;
   font-size: 35px;
 }
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   .work-invite {
     padding-top: 50px;
     font-size: 17.5px;

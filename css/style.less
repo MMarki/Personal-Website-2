@@ -159,14 +159,23 @@ a.image-link img {
     position: absolute;
     width: 760px;
     top: 30%;
-    left: 50%;
+    left: 45%;
     transform: translate(-50%, -50%);
+    
+    @media (max-width : 900px){
+        width: 760px / 3;
+        left: 43%;
+	}
 }
 
 .loadingFront{
     position: absolute;
     height: 200px;
     z-index: 2;
+    
+    @media (max-width : 900px){
+		height: 75px;
+	}
 }
 
 #myBar {
@@ -178,8 +187,11 @@ a.image-link img {
     -webkit-transform: skewX(-15deg);
     -moz-transform: skewX(-15deg);
     transform: skewX(-15deg);
-    left: 30px;
+    left: 30px; 
     
+    @media (max-width : 900px){
+		height: 75px;
+	}
 }
 
 .front-styles{
@@ -209,7 +221,7 @@ a.image-link img {
     padding-top: 80px;
     font-size: 35px;
     
-     @media (max-width : 750px){
+     @media (max-width : 768px){
         padding-top: 50px;
 		font-size: 35px / 2;
 	}
