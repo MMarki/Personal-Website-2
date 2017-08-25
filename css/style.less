@@ -100,10 +100,17 @@ a.image-link img {
         display: inline;
         text-align: left;
         position: absolute;
-        bottom:50px;
-        left:25px;
+        bottom: 50px;
+        left: 25px;
         visibility:hidden;
         color: white;
+        
+        @media (max-width : 600px){
+            bottom: 40px;
+            font-size: 18px;
+            left: 25px;
+            line-height: 140%;
+        }
     }
     
     .header-text {
@@ -114,6 +121,11 @@ a.image-link img {
         left:25px;
         visibility:hidden;
         color: white;
+        
+        @media (max-width : 600px){
+            bottom: 140px;
+            font-size: 24px;
+        }
     }
     
     .thumb-overlay {
