@@ -247,9 +247,9 @@ a.image-link img {
   visibility: hidden;
   color: white;
 }
-@media (max-width: 600px) {
+@media (max-width: 530px) {
   .image-link .text {
-    bottom: 40px;
+    bottom: 30px;
     font-size: 18px;
     left: 25px;
     line-height: 140%;
@@ -264,7 +264,7 @@ a.image-link img {
   visibility: hidden;
   color: white;
 }
-@media (max-width: 600px) {
+@media (max-width: 530px) {
   .image-link .header-text {
     bottom: 140px;
     font-size: 24px;
@@ -347,7 +347,7 @@ a.image-link img {
   }
 }
 .front-styles {
-  padding-top: 150px;
+  padding-top: 200px;
   font-size: 44px;
   max-width: 900px;
   margin: 0 auto;
@@ -411,4 +411,24 @@ a.bttn > span {
   background: #e64626;
   color: #ffffff;
   border-color: #e64626;
+}
+.small-content {
+  display: none;
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .small-content {
+    display: block;
+  }
+}
+.small-content a {
+  font-size: 32px;
+}
+.large-content {
+  display: none;
+}
+@media (min-width: 768px) {
+  .large-content {
+    display: block;
+  }
 }
